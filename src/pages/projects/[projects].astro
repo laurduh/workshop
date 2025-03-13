@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export async function getStaticPaths() {
+  return [
+    {
+      params: { projects: "Crisis" },
+      props: {
+        name: "Crisis of Transparency",
+        description: "My first Astro Project!",
+        link: "https://crisisoftransparency.netlify.app/",
+      },
+    },
+    {
+      params: { projects: "HexAdventures" },
+      props: {
+        name: "Hex Adventures",
+        description: "Game created for Global Game Jam!",
+        link: "https://carlosavila185.itch.io/hex-adventures",
+      },
+    },
+    {
+      params: { projects: "NCWI" },
+      props: {
+        name: "Network of Canadian Investigators",
+        description: "My first Astro Project!",
+        link: "https://www.caninvestigate.com/",
+      },
+    },
+    {
+      params: { projects: "Portfolio" },
+      props: {
+        name: "Personal Portfolio",
+        description: "My Personal Portfolio",
+        link: "https://www.carlosaviladavila.com/",
+      },
+    },
+  ];
+}
+const { projects } = Astro.params;
+const { name, description, link } = Astro.props;
+---
+
+<Layout>
+  <section class="mx-auto w-3/6">
+    <a href=
+`${link}`>
+    <img class="rounded w-100 h-50 drop-shadow-[10px_10px_35px_rgba(100,0,255)] md:w-150 h-75 lg:w-175 h-100" src=`/images/${projects}.png`
+    alt="Crisis of Transparency"/></a>
+    <h1 class="font-bold mt-4">Project {name}</h1>
+    <p>{description}</p>
+    <section></section>
+  </section>
+</Layout>

@@ -6,6 +6,10 @@ import Layout from '../layouts/Layout.astro';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	seoTitle="Welcome"
+	seoDesc="Laura is a Computer Science student at Thompson Rivers University. She is creating her first page with Astro.">
+	<div class="w-8/12 md:w-4/12 mx-auto">
+		<h1 class="text-5xl drop-shadow-[0px_0px_75px_rgba(100,0,255)] md:text-6xl text-center">Welcome to my portfolio! I am Laura</h1>
+	</div>
 </Layout>
